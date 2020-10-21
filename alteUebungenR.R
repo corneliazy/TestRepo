@@ -1,9 +1,12 @@
 #Uebung 0
 #ein paar Rechnungen
 a <- 5/(5+345)
-b <- sin(90)
+b <- 2*sin(90)
+b
+b_2 <- 2* sin(pi/2)
+b_2
 c <- sqrt(16)+sqrt(25)
-d <- (a+b)/c
+d <- (a+b_2)/c
 d
 
 
@@ -21,10 +24,13 @@ vec_a+1
 #Was ist das Besondere an Vektorrechnung mit R?
 c(1, 3, 7) * c(5, 8, 2)
 #normale Vektormultiplikation, aber ohne aufaddieren aller KOmponeneten
+#ELEMENTWEISE MULTIPLIKATION
+
 
 c(1, 3, 7) %*% c(5, 8, 2)
 #hier werden die Komponenten addiert
 #NORMALE Vektormultiplikation
+#SKALARPRODUKT
 
 #Erzeuge eine Matrix ( ?matrix ) mit den Zahlen von 1 bis 12 
 #mit 1 2 3 in der ersten Zeile. Ersetze die 5
