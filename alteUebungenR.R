@@ -31,4 +31,64 @@ c(1, 3, 7) %*% c(5, 8, 2)
 #durch 15 und multipliziere die entstehende Matrix mit 4. Was passiert?
 
 ?matrix
-matrix(c(1,2,3,4,5,6,7,8), nrow=2, ncol=4, byrow=TRUE)
+mat <- matrix(c(1:12), ncol=3, byrow=TRUE)
+mat[mat==5] <- 15
+mat <- mat*4
+mat
+
+#was soll passieren???
+
+#Weise einer Variablen den Wert 12 zu und erstelle einen 
+#Vektor mit den Werten 1,2,3,10,100.
+#Multipliziere beide miteinander und speichere das Ergebnis 
+#als Objekt z. Bilde anschließend die Summe aller Elemente von z.
+
+var_12 <- 12
+vector <- c(1,2,3,10,100)
+z <- var_12*vector
+z
+sum(z)
+
+#sequenz erzeugen, Funktion zeichnen, wobei x die Sequenz ist. 
+#Wie sehen bestimmte Funktionen aus?
+
+?seq
+seq <- seq(from=-3, to=3, by=0.1)
+seq
+x<-seq
+y <- x*x
+plot(x=x, y=y)
+
+y <- 1-x^2
+plot(x=x, y=y)
+
+y <- 5+x^2
+plot(x=x, y=y)
+
+#Erzeuge zwei Vektoren mit folgenden Daten: 
+#t enthält Mo, Di, Mi, Do, Fr, Sa und m enthält 92, 80, 60, 20, 10, 50. 
+#Verbinde beide Vektoren spaltenweise zu einem data.frame und weise diesem 
+#den Namen studie zu; vergebe die Spaltennamen “Motivation”" für m und “Wochentag” für t. 
+#Füge am unteren Ende eien Zeile mit den Elementen So, 100 hinzu.
+
+t <- c("Mo", "Di", "Mi", "Do", "Fr", "Sa")
+m <- c(92,80,60,20,10,50)
+
+?data.frame
+studie <- data.frame(t,m, check.rows=TRUE)
+colnames(studie) <- c("Wochentag", "Motivation")
+
+?rbind
+new_row <- c("So", 100)
+rbind(studie, new_row)
+
+load("C:/Users/Cornelia/Documents/Studium/Bachelor/2. Semester/Geostatistik/Geostatistik Übungen/students.rdata")
+summary(students)
+
+#134 Teilnehmer
+#Variablen: Gender, EyeColor, Age, Length, Weight, Iam,
+#Country, FielOfStudies, Semester
+
+
+#Uebung 1
+
