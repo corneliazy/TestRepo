@@ -97,4 +97,83 @@ summary(students)
 
 
 #Uebung 1
+data(iris)
+head(iris)
+summary(iris)
 
+
+#Mittelwert fuer Sepal.Length
+iris$Sepal.Length
+mean(iris$Sepal.Length)
+#oder:
+meanval <- sum(iris$Sepal.Length)/length(iris$Sepal.Length)
+meanval
+
+#Standardabweichung fuer Sepal.Length
+sd(iris$Sepal.Length)
+#oder:
+
+helpvar <- 0
+for(i in 1:length(iris$Sepal.Length))
+  helpvar <- helpvar+((iris$Sepal.Length[i]-meanval)^2)
+variance <- helpvar/length(iris$Sepal.Length-1)
+standarddev <- sqrt(variance)
+standarddev
+
+sqrt(sum)
+#Median fuer Sepal.Length
+median(iris$Sepal.Length)
+
+quantile(iris$Sepal.Length,c(0.1,0.5,0.9))
+
+
+#Haufigkeit der Variable Species
+head(iris)
+summary(iris$Species)
+
+#loading rdata file
+load(file="C:/Users/Cornelia/Documents/Studium/Bachelor/2. Semester/Geostatistik/Geostatistik ?bungen/students.Rdata")
+ls()
+summary(students)
+str(students)
+
+
+#fuer welche werte kann modalwert berechnet werden?
+table(students$Gender) #Modalwert=m
+table(students$EyeColor) #Modalwert = blue
+table(students$Age) #21
+sort(table(students$Length))#180 hier macht der modalwert keinen sinn, da die meisten Werte nur einmal gemessen werden.
+sort(table(students$Weight))#60 hier macht der Modalwert auch keinen Sinn.
+table(students$Iam)#medium
+table(students$Country)#Germany
+table(students$FieldOfStudies)#Geography
+
+hist(students$Length,plot=FALSE)
+# haeufigster wert: 180
+# Anzahl Studenten groe?er als 150 und kleiner als 170 cm: 6??
+# Studenten kleiner oder gleich 180: 85
+
+#dataframe$neuerSpaltenname fuegt Datensatz neue Spalte hinzu
+students$bmi = students$Weight/(students$Length/100)^2
+head(students)
+
+#ueber welchem Wert des BMI liegen 75% der BMI Werte?
+?quantile
+quantile(students$bmi, 0.25, na.rm=TRUE)
+
+#welcher Prozentsatz liegt ?ber 25?
+?which
+length(students$bmi)
+length(students)
+
+head(students)
+students$Weight
+summary(students)
+filter1 <- students[students$Weight > 65 & students$Length > 170, ]
+summary(students)
+filter2 <- students[students$Weight > 65 && students$Length > 170, ]
+
+summary(filter1)
+summary(filter2)
+
+#dies ist eine aenderung für github
